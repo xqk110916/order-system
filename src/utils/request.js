@@ -23,8 +23,8 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data;
-    // 如果自定义代码不是20000，则判断为错误。
-    if (res.code !== 20000) {
+    // 如果自定义代码不是1，则判断为错误。
+    if (res.code !== 200) {
       console.log('错误信息: ' + res.message || 'Error');
       return Promise.reject(new Error(res.message || 'Error'));
     } else {
